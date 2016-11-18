@@ -8,7 +8,7 @@ ENV PATH $GOROOT/bin:$GOPATH/bin:$PATH
 RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main contrib non-free' >> /etc/apt/sources.list
 RUN apt-get update \
    && apt-get install -y -qq --no-install-recommends curl git patch golang-1.6 \
-   && mkdir -p /go \
+   && mkdir -p /go/bin \
    && apt-get clean
 
 # Default command
