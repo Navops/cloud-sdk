@@ -1,14 +1,13 @@
 FROM google/cloud-sdk:latest
 
-ENV GOROOT /usr/lib/go-1.6
+ENV GOROOT /usr/lib/go-1.7
 ENV GOPATH /go
 ENV PATH $GOROOT/bin:$GOPATH/bin:$PATH
 
-# Install curl, golang-1.6, make, git, gcc, rsync and patch
-RUN echo 'deb http://httpredir.debian.org/debian jessie-backports main contrib non-free' >> /etc/apt/sources.list
+# Install curl, golang-1.7, make, git, gcc, rsync and patch
 RUN apt-get update \
    && apt-get install -y -qq --no-install-recommends curl rsync git patch make \
-   && apt-get install -y -qq golang-1.6 gcc unzip \
+   && apt-get install -y -qq golang-1.7 gcc unzip \
    && mkdir -p /go/bin \
    && apt-get clean
 
