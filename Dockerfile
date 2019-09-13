@@ -9,7 +9,7 @@ RUN apt-get update \
    && apt-get install -y -qq --no-install-recommends curl rsync git patch make \
    && apt-get install -y -qq golang-1.7 gcc unzip \
    && mkdir -p /go/bin \
-   && apt-get clean
+   && apt-get clean && pip install awscli
 
 # Default command
 CMD ["/bin/bash"]
